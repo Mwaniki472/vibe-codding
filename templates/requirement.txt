@@ -1,9 +1,7 @@
-Flask
-Flask-Cors
-python-dotenv
-requests
-mysql-connector-python
-intasend
+Flask==3.0.3
+Flask-Cors==4.0.1
+python-dotenv==1.0.1
+requests==2.32.3
+mysql-connector-python==9.0.0
+intasend-python==1.1.2
 gunicorn==21.2.0
-web: gunicorn app:app
-python-3.10.12
