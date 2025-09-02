@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Study Buddy</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>AI Study Buddy 📚</h1>
+        <p>Paste your study notes below and get AI-generated flashcards!</p>
+        
+        <div class="input-section">
+            <textarea id="notesInput" placeholder="Paste your study notes here..."></textarea>
+            <button onclick="generateFlashcards()">Generate Flashcards</button>
+            <button onclick="loadSavedFlashcards()">Load Saved Flashcards</button>
+        </div>
+        
+        <div class="flashcards-container" id="flashcardsContainer">
+            </div>
+        <div class="premium-section">
+            <h2>Upgrade to Premium 🚀</h2>
+            <p>Get unlimited flashcards, advanced AI features, and more!</p>
+            <div class="pricing">
+                <div class="plan">
+                    <h3>Basic Plan</h3>
+                    <p class="price">$5/month</p>
+                    <ul>
+                        <li>Unlimited flashcards</li>
+                        <li>Advanced AI generation</li>
+                        <li>Priority support</li>
+                    </ul>
+                    <button onclick="initiatePayment('basic', 5)">Subscribe Now</button>
+                </div>
+                <div class="plan">
+                    <h3>Pro Plan</h3>
+                    <p class="price">$10/month</p>
+                    <ul>
+                        <li>Everything in Basic</li>
+                        <li>Export flashcards</li>
+                        <li>Collaborative studying</li>
+                    </ul>
+                    <button onclick="initiatePayment('pro', 10)">Subscribe Now</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="paymentModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2>Complete Payment</h2>
+                <div class="payment-form">
+                    <input type="text" id="phoneNumber" placeholder="Enter phone number">
+                    <input type="email" id="email" placeholder="Enter email (optional)">
+                    <button id="payNowBtn">Pay Now</button>
+                </div>
+                <div id="paymentForm">
+                    </div>
+            </div>
+        </div>
+    </div>
+
+   <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
