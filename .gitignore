@@ -1,1 +1,10 @@
 .env
+.env.production
+.env.local
+__pycache__/
+*.pyc
+instance/
+.DS_Store
+*.log
+database/
+migrations/
